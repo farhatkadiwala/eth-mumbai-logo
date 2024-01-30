@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Yusei Magic;
+  src: url("../src/assets/fonts/YuseiMagic-Regular.ttf");
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: "Yusei Magic";
+  }
+}
