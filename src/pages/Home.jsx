@@ -184,7 +184,7 @@ const Home = () => {
           alt="nimbu mirchi here"
         />
       </div>
-      <div className="relative left-[130vh] top-[-15vh] w-11 flex-col justify-start items-start gap-5 inline-flex">
+      <div className="relative right-[-130vh] top-[-15vh] w-11 flex-col justify-start items-start gap-5 inline-flex">
         <input
           type="color"
           id="upperOuterQuadColorPicker"
