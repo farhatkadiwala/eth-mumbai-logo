@@ -18,7 +18,7 @@ const Home = () => {
   const [otherPathsPickerColor, setOtherPathsPickerColor] = useState("#000000");
 
   const svgRef = useRef(null);
-
+  
   const handleBackgroundPathColorChange = (color) => {
     setBackgroundPathPickerColor(color);
     setBackgroundPathColor(color);
