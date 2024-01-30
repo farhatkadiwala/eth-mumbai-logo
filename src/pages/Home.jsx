@@ -183,6 +183,7 @@ const Home = () => {
               ? currentColor
               : lowerOuterQuadColor
           }
+        {/* Onclick event for handling path*/}
           onClick={() => handlePathSelect("lowerOuterQuad")}
         />
 
@@ -210,6 +211,7 @@ const Home = () => {
       {/* Color pickers and buttons */}
       <div className="relative right-[-130vh] top-[-15vh] w-11 flex-col justify-start items-start gap-5 inline-flex">
         {/* Color pickers for different paths */}
+        {/* Color picker for upper outer quad color*/}
         <input
           type="color"
           id="upperOuterQuadColorPicker"
@@ -218,7 +220,7 @@ const Home = () => {
           onChange={(e) => handleOtherPathsColorChange(e.target.value)}
           className="w-11 h-11 p-2.5 rounded-[1vh] border-1 border-white border-opacity-30 transition-transform transform cursor-pointer hover:scale-120"
         />
-
+        {/* Color picker for upper inner quad color */}
         <input
           type="color"
           id="upperInnerQuadColorPicker"
@@ -227,7 +229,7 @@ const Home = () => {
           onChange={(e) => handleOtherPathsColorChange(e.target.value)}
           className="w-11 h-11 p-2.5 rounded-[1vh] border-1 border-white border-opacity-30 transition-transform transform cursor-pointer hover:scale-120"
         />
-
+        {/* Color picker for lower outer quad color*/}
         <input
           type="color"
           id="lowerOuterQuadColorPicker"
@@ -237,6 +239,7 @@ const Home = () => {
           className="w-11 h-11 p-2.5 rounded-[1vh] border-1 border-white border-opacity-30 transition-transform transform cursor-pointer hover:scale-120"
         />
 
+        {/* Color picker for lower inner quad color*/}
         <input
           type="color"
           id="lowerInnerQuadColorPicker"
