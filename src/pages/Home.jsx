@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { MdAutorenew } from "react-icons/md";
 import { MdOutlineFileDownload } from "react-icons/md";
 
-const Home = () => { 
+const Home = () => {
   // State variables for managing color values
   const [selectedPath, setSelectedPath] = useState(null);
   const [currentColor, setCurrentColor] = useState("#000000");
@@ -13,7 +13,8 @@ const Home = () => {
   const [lowerInnerQuadColor, setLowerInnerQuadColor] = useState("#FFFFFF");
 
   // State variables for color picker values
-  const [backgroundPathPickerColor, setBackgroundPathPickerColor] = useState("#F89D21");
+  const [backgroundPathPickerColor, setBackgroundPathPickerColor] =
+    useState("#F89D21");
   const [otherPathsPickerColor, setOtherPathsPickerColor] = useState("#000000");
 
   // Ref for accessing the SVG element
@@ -50,11 +51,17 @@ const Home = () => {
     setSelectedPath(path);
     setCurrentColor(
       // Determine the initial color based on the selected path
-      path === "backgroundPathColor" ? backgroundPathColor :
-      path === "upperOuterQuad" ? upperOuterQuadColor :
-      path === "upperInnerQuad" ? upperInnerQuadColor :
-      path === "lowerOuterQuad" ? lowerOuterQuadColor :
-      path === "lowerInnerQuad" ? lowerInnerQuadColor : "#000000"
+      path === "backgroundPathColor"
+        ? backgroundPathColor
+        : path === "upperOuterQuad"
+        ? upperOuterQuadColor
+        : path === "upperInnerQuad"
+        ? upperInnerQuadColor
+        : path === "lowerOuterQuad"
+        ? lowerOuterQuadColor
+        : path === "lowerInnerQuad"
+        ? lowerInnerQuadColor
+        : "#000000"
     );
   };
 
@@ -92,11 +99,16 @@ const Home = () => {
 
   // Function to refresh the color palette with random colors
   function refreshPalette() {
-    setUpperOuterQuadColor(generateRandomColor());
-    setUpperInnerQuadColor(generateRandomColor());
-    setLowerOuterQuadColor(generateRandomColor());
-    setLowerInnerQuadColor(generateRandomColor());
-    setBackgroundPathColor(generateRandomColor());
+    const background_colour = generateRandomColor();
+    const outer_upper = generateRandomColor();
+    const inner_upper = generateRandomColor();
+    const outer_lower = generateRandomColor();
+    const inner_lower = generateRandomColor();
+    setUpperOuterQuadColor(outer_upper);
+    setUpperInnerQuadColor(inner_upper);
+    setLowerOuterQuadColor(outer_lower);
+    setLowerInnerQuadColor(inner_lower);
+    setBackgroundPathColor(background_colour);
   }
 
   // Function to download the SVG as a PNG file
@@ -105,7 +117,7 @@ const Home = () => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
     const img = new Image();
-    
+
     img.onload = () => {
       canvas.width = img.width;
       canvas.height = img.height;
@@ -144,28 +156,44 @@ const Home = () => {
         {/* Upper Outer Quad */}
         <path
           d="M1185.6 294.398L1758 1216L1196.4 1548.4L642 1210L1185.6 294.398Z"
-          fill={selectedPath === "upperOuterQuad" ? currentColor : upperOuterQuadColor}
+          fill={
+            selectedPath === "upperOuterQuad"
+              ? currentColor
+              : upperOuterQuadColor
+          }
           onClick={() => handlePathSelect("upperOuterQuad")}
         />
 
         {/* Upper Inner Quad */}
         <path
           d="M1196.41 2105.2L1755.61 1319.2L1198.81 1649.2L645.609 1327.6L1196.41 2105.2Z"
-          fill={selectedPath === "upperInnerQuad" ? currentColor : upperInnerQuadColor}
+          fill={
+            selectedPath === "upperInnerQuad"
+              ? currentColor
+              : upperInnerQuadColor
+          }
           onClick={() => handlePathSelect("upperInnerQuad")}
         />
 
         {/* Lower Outer Quad */}
         <path
           d="M1186.79 456.398L1607.99 1166.8L1191.59 1428.4L788.391 1166.8L1186.79 456.398Z"
-          fill={selectedPath === "lowerOuterQuad" ? currentColor : lowerOuterQuadColor}
+          fill={
+            selectedPath === "lowerOuterQuad"
+              ? currentColor
+              : lowerOuterQuadColor
+          }
           onClick={() => handlePathSelect("lowerOuterQuad")}
         />
 
         {/* Lower Inner Quad */}
         <path
           d="M1198.8 1992.4L1486.8 1572.4L1205.75 1750L928.805 1603.6L1198.8 1992.4Z"
-          fill={selectedPath === "lowerInnerQuad" ? currentColor : lowerInnerQuadColor}
+          fill={
+            selectedPath === "lowerInnerQuad"
+              ? currentColor
+              : lowerInnerQuadColor
+          }
           onClick={() => handlePathSelect("lowerInnerQuad")}
         />
       </svg>
@@ -210,7 +238,7 @@ const Home = () => {
         />
 
         <input
-          type="color" 
+          type="color"
           id="lowerInnerQuadColorPicker"
           value={lowerInnerQuadColor}
           style={{ backgroundColor: lowerInnerQuadColor }}
