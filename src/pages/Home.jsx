@@ -212,7 +212,7 @@ const Home = () => {
           className="w-11 h-11 p-2.5 rounded-[1vh] border-1 border-white border-opacity-30 transition-transform transform cursor-pointer hover:scale-120"
         />
         <input
-          type="color"
+          type="color" 
           id="lowerInnerQuadColorPicker"
           value={lowerInnerQuadColor}
           style={{ backgroundColor: lowerInnerQuadColor }}
