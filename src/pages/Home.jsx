@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { MdAutorenew } from "react-icons/md";
 import { MdOutlineFileDownload } from "react-icons/md";
-import iconBrand from "../assets/icon/icon-brand.svg";
 
 const Home = () => {
   const [selectedPath, setSelectedPath] = useState(null);
