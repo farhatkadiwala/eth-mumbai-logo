@@ -99,11 +99,11 @@ const Home = () => {
 
   // Function to refresh the color palette with random colors
   function refreshPalette() {
-    const background_colour = generateRandomColor();
-    const outer_upper = generateRandomColor();
-    const inner_upper = generateRandomColor();
-    const outer_lower = generateRandomColor();
-    const inner_lower = generateRandomColor();
+    const bg_color = generateRandomColor();
+    const upper_outer = generateRandomColor();
+    const upper_inner = generateRandomColor();
+    const lower_outer = generateRandomColor();
+    const lower_inner = generateRandomColor();
     setUpperOuterQuadColor(outer_upper);
     setUpperInnerQuadColor(inner_upper);
     setLowerOuterQuadColor(outer_lower);
